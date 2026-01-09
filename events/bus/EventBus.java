@@ -137,22 +137,18 @@ public class EventBus {
     public <T> T post(T event) {
         if (event == null) return null;
 
-        // Получаем слушатели из кеша или сортируем
         List<EventListener<?>> eventListeners = getSortedListeners(event.getClass());
 
-        // Для отменяемых событий
         boolean cancelled = false;
         if (event instanceof Cancellable) {
             cancelled = ((Cancellable) event).isCancelled();
         }
 
-        // Вызываем слушатели
-        for (EventListener<?> listener : eventListeners) {
+          for (EventListener<?> listener : eventListeners) {
             if (cancelled) break; // Отменённые события не обрабатываются
 
             ((EventListener<T>) listener).handle(event);
 
-            // Проверяем остановку
             if (event instanceof Stoppable && ((Stoppable) event).isStopped()) {
                 break;
             }
