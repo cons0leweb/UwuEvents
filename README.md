@@ -18,33 +18,6 @@
 
 ## 🚀 Быстрый старт
 
-### Добавление в проект
-
-**Gradle:**
-```gradle
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.cons0leweb:UwuEvents:1.0.0'
-}
-```
-
-**Maven:**
-```xml
-<repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-</repository>
-
-<dependency>
-    <groupId>com.github.cons0leweb</groupId>
-    <artifactId>UwuEvents</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
 ### Создание первого события
 
 ```java
