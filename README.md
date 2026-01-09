@@ -23,7 +23,7 @@
 ```java
 package com.example.mymod.events;
 
-import UwuEvents.events.AbstractEvent;
+import uwu.events.events.AbstractEvent;
 
 public class PlayerJumpEvent extends AbstractEvent {
     private final double motionY;
@@ -42,8 +42,8 @@ public class PlayerJumpEvent extends AbstractEvent {
 
 **Способ 1: Аннотации (просто)**
 ```java
-import UwuEvents.annotation.Subscribe;
-import UwuEvents.bus.Priority;
+import uwu.events.annotation.Subscribe;
+import uwu.events.bus.Priority;
 
 public class MyModule {
     
@@ -188,7 +188,7 @@ profiler.disable();
 ├─────────────────────────────────────────────┤
 │  @Subscribe / Events.bus().subscribe()      │
 ├─────────────────────────────────────────────┤
-│              UwuEvents.Core                │
+│              uwu.events.Core                │
 │  ┌──────────┐ ┌──────────┐ ┌────────────┐  │
 │  │ EventBus │ │  Events  │ │ AutoSubscr │  │
 │  └──────────┘ └──────────┘ └────────────┘  │
@@ -283,7 +283,7 @@ public void onCriticalEvent(MyEvent event) {
 ### Включение логов
 ```java
 // В главном классе вашего мода
-System.setProperty("UwuEvents.debug", "true");
+System.setProperty("uwu.events.debug", "true");
 ```
 
 ### Профилирование
