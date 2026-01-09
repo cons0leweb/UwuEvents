@@ -29,10 +29,8 @@ public class AutoSubscriber {
                     Subscribe annotation = method.getAnnotation(Subscribe.class);
                     Class<?> eventType = params[0];
 
-                    // Создаём лямбду с правильным типом через рефлексию
                     Consumer<Object> handler = createHandler(object, method, eventType);
-
-                    // Используем raw type для подписки
+                    
                     @SuppressWarnings("unchecked")
                     uwu.events.bus.EventListener<Object> listener =
                             (uwu.events.bus.EventListener<Object>) EventBus.getInstance()
