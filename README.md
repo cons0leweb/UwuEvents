@@ -8,7 +8,7 @@
 
 ## 📖 О проекте
 
-`uwu.events` — это полная переработка концепции event bus для Minecraft моддинга. Мы убили древний, медленный и небезопасный код из 2014 года и создали систему, которая:
+`UwuEvents` — это полная переработка концепции event bus для Minecraft моддинга. Мы убили древний, медленный и небезопасный код из 2014 года и создали систему, которая:
 
 - **В 10x быстрее** — лямбды вместо рефлексии
 - **Типобезопасна** — компилятор ловит ошибки за вас
@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.yourname:uwu.events:1.0.0'
+    implementation 'com.github.cons0leweb:UwuEvents:1.0.0'
 }
 ```
 
@@ -39,8 +39,8 @@ dependencies {
 </repository>
 
 <dependency>
-    <groupId>com.github.yourname</groupId>
-    <artifactId>uwu.events</artifactId>
+    <groupId>com.github.cons0leweb</groupId>
+    <artifactId>UwuEvents</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -50,7 +50,7 @@ dependencies {
 ```java
 package com.example.mymod.events;
 
-import uwu.events.events.AbstractEvent;
+import UwuEvents.events.AbstractEvent;
 
 public class PlayerJumpEvent extends AbstractEvent {
     private final double motionY;
@@ -69,8 +69,8 @@ public class PlayerJumpEvent extends AbstractEvent {
 
 **Способ 1: Аннотации (просто)**
 ```java
-import uwu.events.annotation.Subscribe;
-import uwu.events.bus.Priority;
+import UwuEvents.annotation.Subscribe;
+import UwuEvents.bus.Priority;
 
 public class MyModule {
     
@@ -206,18 +206,6 @@ System.out.println(profiler.generateReport());
 profiler.disable();
 ```
 
-## 📊 Бенчмарки
-
-```
-Benchmark                       Mode  Cnt     Score    Error  Units
-OldSystem.1000_Events          thrpt    5   142.347 ±  8.456  ops/s
-UwuEvents.1000_Events          thrpt    5  1542.891 ± 42.187  ops/s → 10.8x быстрее!
-
-OldSystem.10000_Events         thrpt    5    14.228 ±  0.845  ops/s  
-UwuEvents.10000_Events         thrpt    5   158.324 ±  5.123  ops/s → 11.1x быстрее!
-```
-
-*Тесты на Intel i7-11800H, Java 17, 1000-10000 событий с 5-10 обработчиками*
 
 ## 🏗️ Архитектура
 
@@ -227,7 +215,7 @@ UwuEvents.10000_Events         thrpt    5   158.324 ±  5.123  ops/s → 11.1x �
 ├─────────────────────────────────────────────┤
 │  @Subscribe / Events.bus().subscribe()      │
 ├─────────────────────────────────────────────┤
-│              uwu.events.Core                │
+│              UwuEvents.Core                │
 │  ┌──────────┐ ┌──────────┐ ┌────────────┐  │
 │  │ EventBus │ │  Events  │ │ AutoSubscr │  │
 │  └──────────┘ └──────────┘ └────────────┘  │
@@ -322,7 +310,7 @@ public void onCriticalEvent(MyEvent event) {
 ### Включение логов
 ```java
 // В главном классе вашего мода
-System.setProperty("uwu.events.debug", "true");
+System.setProperty("UwuEvents.debug", "true");
 ```
 
 ### Профилирование
@@ -361,13 +349,12 @@ MIT License - смотри файл [LICENSE](LICENSE)
 
 ## 📞 Поддержка
 
-- **Issues**: [GitHub Issues](https://github.com/yourname/uwu.events/issues)
-- **Discord**: [Ссылка на Discord сервер](https://discord.gg/your-invite)
-- **Примеры**: [Примеры использования](https://github.com/yourname/uwu.events-examples)
+- **Issues**: [GitHub Issues](https://github.com/cons0leweb/UwuEvents/issues)
+- **Telegram**: [Личные сообщения](https://t.me/imclaude_ai)
 
-## ⭐ Почему выбирают uwu.events?
+## ⭐ Почему выбирают UwUEvents?
 
-| Особенность | darkmagician6 | uwu.events |
+| Особенность | darkmagician6 | UwuEvents |
 |-------------|---------------|------------|
 | Скорость | 🐢 Рефлексия | 🚀 Лямбды |
 | Безопасность | ❌ Runtime ошибки | ✅ Компиляция |
