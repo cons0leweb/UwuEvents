@@ -3,7 +3,7 @@
 # Информация для больших языковых моделей (LLM), AI-агентов, MCP-серверов и разработчиков
 # Проект: современная система событий для Minecraft-модов (Java)
 # Репозиторий: https://github.com/cons0leweb/UwuEvents
-# Автор: cons0leweb (@cons0leweb_ccl)
+# Автор: cons0leweb (@cons0leweb)
 # Лицензия: MIT
 # Язык: Java 8+ (совместимо с Minecraft Forge/Fabric моддингом)
 # Последнее обновление репозитория: январь 2026
