@@ -202,28 +202,6 @@ profiler.disable();
 
 ## 📝 Примеры использования
 
-### Minecraft чит-клиент
-```java
-public class KillAura extends Module {
-    
-    @Subscribe(priority = Priority.HIGHEST)
-    public void onAttack(AttackEntityEvent event) {
-        if (!isEnabled()) return;
-        
-        // Автоатака по ентити
-        if (shouldAttack(event.getEntity())) {
-            mc.interactionManager.attackEntity(mc.player, event.getEntity());
-        }
-    }
-    
-    @Subscribe
-    public void onRender(Render3DEvent event) {
-        // Отрисовка ESP
-        renderESP(event.getMatrixStack());
-    }
-}
-```
-
 ### GUI система
 ```java
 public class ClickGui {
